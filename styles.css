@@ -1,0 +1,15 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: violet;
+}
+
+#wrapper {
+    background-color: white;
+    margin: auto;
+    max-width: 500px;
+    padding: 15px;
+}
+
+header {
+    text-align: center;
+}
