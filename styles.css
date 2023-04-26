@@ -1,15 +1,22 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: violet;
+    font-size: 1em;
 }
 
 #wrapper {
     background-color: white;
     margin: auto;
-    max-width: 500px;
+    width: 95%;
     padding: 15px;
 }
 
 header {
     text-align: center;
 }
+
+@media screen and (min-width: 600px) {
+    #wrapper {
+        width: 500px;
+    }
+  }

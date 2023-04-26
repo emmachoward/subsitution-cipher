@@ -1,18 +1,16 @@
 let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-let randomizedAlphabet = alphabet.map(value =>({value, sort: Math.random()})).sort((a, b) => a.sort - b.sort).map(({value}) => value);
 //https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array 
+let randomizedAlphabet = alphabet.map(value =>({value, sort: Math.random()})).sort((a, b) => a.sort - b.sort).map(({value}) => value);
 
+//matches the alphabet with the radomizedAlphabet to form a key for the message
 let key = []
 for (let i in alphabet) {
     key[i] = alphabet[i] + " = " + randomizedAlphabet[i];
 }
 
-let defaultMessage = "Default Message...";
-let message =  defaultMessage;
-
+//gets the message from the form when submitted
 let form = document.querySelector("form");
-
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -21,8 +19,8 @@ form.addEventListener("submit", function (event) {
     encodeMessage(message);
 });
 
+//encodes the message that came from the form
 function encodeMessage (message) {
-    console.log(message);
     let encodedMessage = [];
     for (let character in message) {
         let letterIndex = alphabet.indexOf(message[character].toLowerCase());
@@ -34,12 +32,6 @@ function encodeMessage (message) {
     };
     console.log(encodedMessage.join("").toUpperCase());
 
-    document.getElementById("output").innerHTML = key.join("<br />") + "<br /><br />" + message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase();;
-    //return 
-   
+    //writes to the page only after the form is submitted
+    document.getElementById("output").innerHTML = message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"); 
 };
-
-
-
-
-//console.log(key.join("\n"),"\n", input, "\n", encodedMessage.join("").toUpperCase());
