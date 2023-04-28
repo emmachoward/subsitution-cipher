@@ -35,3 +35,13 @@ function encodeMessage (message) {
     //writes to the page only after the form is submitted
     document.getElementById("output").innerHTML = message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"); 
 };
+
+//https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+function toggleHelp() {
+    var x = document.getElementById("help");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  } 
