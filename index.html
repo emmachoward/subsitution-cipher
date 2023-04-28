@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Substitution Cipher</title>
+        <title>Ciphering App - Substitution Cipher Generator</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div id="wrapper">
             <header>
-                <h1>Substitution Cipher</h1>
-                <p>by Emma Howard</p>
+                <h1>Ciphering App</h1>
+                <p id="helpButton" onclick="toggleHelp()">Help?</p>
+                <p id="help">Type in a message and submit, 
+                    and an encoded version of the message will be generated using a substitution cipher, 
+                    along with a key for the randomized letters.
+                    This can be handy for creating a puzzle for others to solve.
+                    Generally speaking, a sentence or two is an ideal length for these. 
+                    Be sure to provide one of the letter keys as a hint.
+                    The first letter listed is the original alphabet, and the the second is the coded version.
+                    Have fun!
+                </p>
             </header>
             <form>
                 <label>Message to be encoded <input type="text" name="userInput" id="userInput" /></label>
@@ -16,6 +25,9 @@
             </form>
             <p id="output"></p>
         </div>
+        <footer>
+            <p>by Emma Howard</p>
+        </footer>
         <script src="scripts.js"></script>
     </body>
 </html> 
