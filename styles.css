@@ -1,6 +1,6 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: violet;
+    background-color: #e49dfa;
     font-size: 1em;
 }
 
@@ -13,6 +13,26 @@ body {
 
 header {
     text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+#helpButton {
+    border: 1px solid gray;
+    display: inline-block;
+    padding: 5px;
+}
+
+#help {
+    display: none;
+    border: 1px solid gray;
+    padding: 5px;
+}
+
+form {
+    margin: 20px auto auto auto;
 }
 
 @media screen and (min-width: 600px) {
