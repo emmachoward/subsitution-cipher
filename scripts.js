@@ -30,14 +30,21 @@ function encodeMessage (message) {
         };
     };
 
-    //writes to the page only after the form is submitted
-    //https://www.w3schools.com/jquery/jquery_dom_set.asp
-    $("#output").html(message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"))
-        .slideDown(); //Slide Down Not Working!
+    //loading animation
+    $(".loading").slideDown(400).animate({left: '-=100px'})
+    .animate({left: '+=200px'})
+    .animate({left: '-=100px'})
+    .slideUp(400, function () {
+
+        //writes to the page only after the form is submitted
+        $("#output").html(message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"))
+        .slideDown(400);
+    });
 };
 
 
 //https://www.w3schools.com/jquery/jquery_hide_show.asp
 $("#helpButton").click(function(){
     $("#help").fadeToggle();
-  }); 
+});
+
