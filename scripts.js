@@ -10,11 +10,10 @@ for (let i in alphabet) {
 }
 
 //gets the message from the form when submitted
-let form = document.querySelector("form");
-form.addEventListener("submit", function (event) {
+$("form").submit(function(event){
     event.preventDefault();
 
-    let userInput = form.elements["userInput"].value;
+    let userInput = $("#userInput").val();
     message = userInput.split("");
     encodeMessage(message);
 });
@@ -30,18 +29,15 @@ function encodeMessage (message) {
             encodedMessage.push(message[character]);
         };
     };
-    console.log(encodedMessage.join("").toUpperCase());
 
     //writes to the page only after the form is submitted
-    document.getElementById("output").innerHTML = message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"); 
+    //https://www.w3schools.com/jquery/jquery_dom_set.asp
+    $("#output").html(message.join("") + "<br /><br />" + encodedMessage.join("").toUpperCase() + "<br /><br />" + key.join("<br />"))
+        .slideDown(); //Slide Down Not Working!
 };
 
-//https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
-function toggleHelp() {
-    var x = document.getElementById("help");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  } 
+
+//https://www.w3schools.com/jquery/jquery_hide_show.asp
+$("#helpButton").click(function(){
+    $("#help").fadeToggle();
+  }); 
