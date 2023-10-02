@@ -7,7 +7,7 @@ body {
 #wrapper {
     background-color: white;
     margin: auto;
-    width: 95%;
+    width: 90%;
     padding: 15px;
 }
 
@@ -37,6 +37,7 @@ form {
 
 #output {
     display: none;
+    text-align: center;
 }
 
 .loading {
@@ -48,6 +49,15 @@ form {
     position: relative;
     display: none;
 }
+
+a:link, a:visited {
+    color: #313131;
+}
+
+a:hover, a:active {
+    color: #6e6e6e;
+    text-decoration: none;
+  }
 
 @media screen and (min-width: 600px) {
     #wrapper {
