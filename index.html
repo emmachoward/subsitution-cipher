@@ -13,6 +13,7 @@
                 <h1>Ciphering App</h1>
                 <p id="helpButton" onclick="toggleHelp()">Help?</p>
                 <p id="help">Type in a message and submit, 
+                    or pick a random joke instead,
                     and an encoded version of the message will be generated using a substitution cipher, 
                     along with a key for the randomized letters.
                     This can be handy for creating a puzzle for others to solve.
@@ -23,7 +24,9 @@
                 </p>
             </header>
             <form>
-                <label>Message to be encoded <input type="text" name="userInput" id="userInput" /></label>
+                <label>Message to be encoded: <input type="text" name="userInput" id="userInput" /></label>
+                <br>
+                <label>Pick a random joke instead! <input type="checkbox" name="jokecheck" id="jokecheck" value="telljoke"/></label>
                 <button id="formSubmit">Submit</button>
             </form>
             <div class="loading">
@@ -32,7 +35,8 @@
             </p>
         </div>
         <footer>
-            <p>by Emma Howard</p>
+            <p>by <a href="https://emmachoward.com/">Emma C Howard</a></p>
+            <p>Jokes provided by <a href="https://icanhazdadjoke.com/">icanhazdadjoke</a></p>
         </footer>
         <script src="scripts.js"></script>
     </body>
