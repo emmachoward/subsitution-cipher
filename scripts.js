@@ -55,7 +55,7 @@ $("#helpButton").click(function(){
     $("#help").fadeToggle();
 });
 
-// //https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+//https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
 async function getjoke() {
     const response = await fetch("https://icanhazdadjoke.com/", {
         headers: {
@@ -67,3 +67,19 @@ async function getjoke() {
     //console.log(jokeJSON);
     return(jokeJSON);
 }
+
+//Disables form input if joke is checked
+function updateCheckbox(){
+    if ($("#jokecheck").is(":checked")){
+        $("#userInput").prop("disabled", true);
+    } else {
+        $("#userInput").prop("disabled", false);
+    }
+}
+
+$("#jokecheck").click(function(){
+    updateCheckbox();
+})
+
+//updated every page load
+updateCheckbox();
